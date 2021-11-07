@@ -861,6 +861,9 @@ public class StepperIndicator extends View implements ViewPager.OnPageChangeList
         boolean drawToNext = previousStep == currentStep - 1;
         boolean drawFromNext = previousStep == currentStep + 1;
 
+        if (typeface != null) {
+            labelPaint.setTypeface(typeface);
+        }
         for (int i = 0; i < indicators.length; i++) {
             final float indicator = indicators[i];
 
