@@ -1,5 +1,19 @@
 apply plugin: 'com.android.library'
+apply plugin:'maven-publish'
 
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = "com.github.chaimgross"
+                artifactId = 'stepper-indicator'
+                version = version
+            }
+        }
+    }
+}
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
